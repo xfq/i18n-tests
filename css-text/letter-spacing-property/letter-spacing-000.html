@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<title>letter-spacing basic test</title>
+<meta name="assert" id="assert" content="Test basic functionality of letter-spacing">
+<link rel="help" href="https://drafts.csswg.org/css-text-3/#letter-spacing-property">
+<link rel="author" title="Fuqiao Xue" href="mailto:xfq@w3.org">
+<link rel="stylesheet" href="../../fonts/metadata_styles.css"/>
+<style>
+.ref { color: red; z-index: -100; }
+.ref, .test { position:absolute; top:0; }
+/* the CSS above is not part of the test */
+
+.test, .ref {
+  font-family: monospace;
+  font-size: 3em;
+}
+.test {
+  letter-spacing: 1ch;
+}
+</style>
+</head>
+<body>
+<p class="instructions">Test passes _if there is no red_.</p>
+
+<div style="position:relative">
+  <div class="test">aa</div>
+  <div class="ref">a a</div>
+</div>
+
+<div id="info">
+<p id="assertion"></p><script>document.getElementById('assertion').textContent='Assertion: '+document.getElementById('assert').content</script>
+<ul class="notes">
+<li><code>letter-spacing</code> of the test div is set to <code>1ch</code>.</li>
+</ul>
+</div>
+</body>
+</html>
